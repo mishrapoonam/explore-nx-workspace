@@ -13,23 +13,27 @@
       }
     },
     "directory": {
-      "enum": ["store", "api", "shared"],
+      "enum": [" api", " store", " shared", "video-games"],
       "description": "Provide a directory for your library",
       "x-prompt": {
         "message": "Which directory do you want the lib to be in?",
         "type": "list",
         "items": [
           {
-            "value": "store",
-            "label": "store"
+            "value": "api",
+            "label": "Api"
           },
           {
-            "value": "api",
-            "label": "api"
+            "value": "store",
+            "label": "Store"
           },
           {
             "value": "shared",
-            "label": "shared"
+            "label": "Shared"
+          },
+          {
+            "value": "video-games",
+            "label": "VideoGames"
           }
         ]
       }
