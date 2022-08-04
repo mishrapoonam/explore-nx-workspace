@@ -13,8 +13,8 @@
       }
     },
     "directory": {
-      "type": "string",
-      "description": "The scope of your lib.",
+      "enum": ["store", "api", "shared"],
+      "description": "Provide a directory for your library",
       "x-prompt": {
         "message": "Which directory do you want the lib to be in?",
         "type": "list",
