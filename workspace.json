@@ -10,6 +10,8 @@
     "store-feature-game-detail": "libs/store/feature-game-detail",
     "store-ui-shared": "libs/store/ui-shared",
     "store-util-formatters": "libs/store/util-formatters",
-    "util-interface": "libs/util-interface"
+    "util-interface": "libs/util-interface",
+    "video-games": "apps/video-games",
+    "video-games-e2e": "apps/video-games-e2e"
   }
 }

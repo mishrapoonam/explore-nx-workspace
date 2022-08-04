@@ -18,10 +18,10 @@ function getScopes(projectMap: Map<string, ProjectConfiguration>) {
 
 function replaceScopes(content: string, scopes: string[]): string {
   const joinScopes = scopes.map((s) => `'${s}'`).join(' | ');
-  const PATTERN = /interface Schema \{\n.*\n.*\n\}/gm;
+  const PATTERN = /interface UtilLibSchema \{\n.*\n.*\n\}/gm;
   return content.replace(
     PATTERN,
-    `interface Schema {
+    `interface UtilLibSchema {
   name: string;
   directory: ${joinScopes};
 }`
@@ -36,12 +36,12 @@ export default async function (tree: Tree) {
       label: names(scope).className,
     }));
     schemaJson.properties.directory.enum = scopes
- 
     return schemaJson;
   });
 
   const content = tree.read('tools/generators/util-lib/schema.json', 'utf-8') as string;
   const newContent = replaceScopes(content, scopes);
   tree.write('tools/generators/util-lib/schema.json', newContent);
+
   await formatFiles(tree);
 }
